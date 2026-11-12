@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="400" height="520">
+<defs><radialGradient id="aura" cx="50%" cy="45%" r="55%"><stop offset="0" stop-color="#8a5cff" stop-opacity=".55"/><stop offset=".6" stop-color="#8a5cff" stop-opacity=".18"/><stop offset="1" stop-color="#8a5cff" stop-opacity="0"/></radialGradient>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>
+<filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2"/></filter>
+<linearGradient id="shade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".0"/><stop offset="1" stop-color="#000" stop-opacity=".22"/></linearGradient></defs>
+<circle cx="200" cy="240" r="200" fill="url(#aura)"/>
+<g font-family="DejaVu Sans Mono,monospace" font-weight="700" fill="#b9a2ff" opacity=".55"><text x="40" y="130" font-size="46">0</text><text x="318" y="110" font-size="34">0</text><text x="330" y="280" font-size="52">0</text><text x="26" y="300" font-size="30">0</text><text x="60" y="400" font-size="36">∅</text></g>
+<path d="M200 36 C106 46 74 160 86 262 C92 336 110 410 56 520 L344 520 C290 410 308 336 314 262 C326 160 294 46 200 36Z" fill="#241a45" stroke="#2b1d1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M200 36 C130 50 104 150 112 250" fill="none" stroke="#6a4ad8" stroke-width="6" opacity=".5"/>
+<path d="M56 520 L80 488 L98 520 L124 484 L146 520 L176 490 L200 520 L226 488 L252 520 L280 484 L302 520 L322 490 L344 520Z" fill="#150f2c"/>
+<path d="M200 96 C140 100 124 170 130 262 C134 320 160 350 200 352 C240 350 266 320 270 262 C276 170 260 100 200 96Z" fill="#07050f" stroke="#2b1d1a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="170" cy="250" rx="19" ry="11" fill="#7ef3ff" filter="url(#glow)"/><ellipse cx="230" cy="250" rx="19" ry="11" fill="#7ef3ff" filter="url(#glow)"/>
+<ellipse cx="170" cy="250" rx="13" ry="7" fill="#e8ffff"/><ellipse cx="230" cy="250" rx="13" ry="7" fill="#e8ffff"/>
+<path d="M170 312 Q200 330 230 312" fill="none" stroke="#3a2a66" stroke-width="4" stroke-linecap="round"/>
+<path d="M100 420 C80 440 70 480 74 520 M300 420 C320 440 330 480 326 520" fill="none" stroke="#6a4ad8" stroke-width="4" opacity=".5"/>
+</svg>

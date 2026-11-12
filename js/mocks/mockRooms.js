@@ -1,0 +1,2 @@
+/* Mock rooms available to join (QUEST1 = open demo room, FULL01 handled by the service) */
+const MOCK_ROOMS={QUEST1:{id:'room_demo',code:'QUEST1',name:'Demo Guild',max:8,min:2,subject:'Mathematics',level:'Junior High',chapter:'ch1',chapterTitle:'Chapter 1 — The Archive Gate',mode:'teacher',objectives:'Practice multiplication and teamwork.',players:[{name:'Ms. Rina',role:null,ready:true,host:true,dm:true},{name:'Aria',role:'mage',ready:true},{name:'Bram',role:'swordsman',ready:false}]}};
