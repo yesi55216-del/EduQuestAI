@@ -21,81 +21,75 @@ async generateJSON(prompt) {
         const url =
             `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
 
-        for (let attempt = 1; attempt <= 2; attempt++) {
-            try {
-                const response = await fetch(url, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "x-goog-api-key": apiKey
-                    },
-                    body: JSON.stringify({
-                        contents: [{
-                            parts: [{ text: prompt }]
-                        }],
-                        generationConfig: {
-                            responseMimeType: "application/json",
-                            temperature: 0.8,
-                            maxOutputTokens: 8192
-                        }
-                    })
-                });
-
-                const result = await response.json();
-
-                if (!response.ok) {
-                    const message = result.error?.message ||
-                        "Unknown Gemini API error";
-
-                    console.error(
-                        `Gemini ${model} error (${response.status}):`,
-                        message
-                    );
-
-                    lastError = new Error(message);
-
-                    if (![429, 500, 502, 503, 504].includes(response.status)) {
-                        throw lastError;
+        try {
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "x-goog-api-key": apiKey
+                },
+                signal: AbortSignal.timeout(45000),
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{ text: prompt }]
+                    }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        temperature: 0.8,
+                        maxOutputTokens: 8192
                     }
+                })
+            });
 
-                    if (attempt < 2) {
-                        await new Promise(resolve =>
-                            setTimeout(resolve, 1500 * attempt)
-                        );
-                    }
+            const result = await response.json();
 
-                    continue;
+            if (!response.ok) {
+                const message = result.error?.message ||
+                    "Unknown Gemini API error";
+
+                console.error(
+                    `Gemini ${model} error (${response.status}):`,
+                    message
+                );
+
+                lastError = new Error(message);
+
+                if (![429, 500, 502, 503, 504].includes(response.status)) {
+                    throw lastError;
                 }
 
-                const text = result.candidates?.[0]?.content?.parts
-                    ?.map(part => part.text || "")
-                    .join("");
-
-                if (!text) {
-                    throw new Error("Gemini returned an empty response.");
-                }
-
-                try {
-                    console.log(`Gemini generation successful using ${model}`);
-                    return JSON.parse(text);
-                } catch {
-                    throw new Error("Gemini returned invalid JSON.");
-                }
-
-            } catch (error) {
-                if (error.message === "Gemini returned invalid JSON." ||
-                    error.message === "Gemini returned an empty response.") {
-                    throw error;
-                }
-
-                lastError = error;
-
-                if (attempt < 2) {
-                    await new Promise(resolve =>
-                        setTimeout(resolve, 1500 * attempt)
-                    );
-                }
+                continue;
             }
+
+            const text = result.candidates?.[0]?.content?.parts
+                ?.map(part => part.text || "")
+                .join("");
+
+            if (!text) {
+                throw new Error("Gemini returned an empty response.");
+            }
+
+            try {
+                console.log(`Gemini generation successful using ${model}`);
+                return JSON.parse(text);
+            } catch {
+                throw new Error("Gemini returned invalid JSON.");
+            }
+
+        } catch (error) {
+            if (
+                error.message === "Gemini returned invalid JSON." ||
+                error.message === "Gemini returned an empty response."
+            ) {
+                throw error;
+            }
+
+            lastError = error;
+
+            console.error(
+                `Gemini ${model} failed:`,
+                error.message
+            );
         }
 
         console.log(`Trying fallback model after ${model} failed...`);
@@ -103,7 +97,9 @@ async generateJSON(prompt) {
 
     console.error("All Gemini models failed:", lastError?.message);
 
-    throw new Error("Gemini could not generate content. Please try again later.");
+    throw new Error(
+        "Gemini could not generate content. Please try again later."
+    );
 },
 
 
