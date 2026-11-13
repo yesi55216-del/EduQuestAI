@@ -1,4 +1,4 @@
-# EduQuest (frontend demo) — Dungeon Master & Player
+# EduQuest Dungeon Master & Player
 
 Buka `index.html` (klik dua kali). Internet hanya untuk Google Fonts.
 Demo: kode room `QUEST1` (terbuka), `FULL01` (penuh).
