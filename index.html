@@ -1,110 +1,112 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>EduQuest — Different Paths, One Quest</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@400;700&display=swap">
-<link rel="stylesheet" href="css/base.css?v=3">
-<link rel="stylesheet" href="css/modals.css?v=3">
-<link rel="stylesheet" href="css/home.css?v=3">
-<link rel="stylesheet" href="css/room-lobby.css?v=3">
-<link rel="stylesheet" href="css/character-select.css?v=3">
-<link rel="stylesheet" href="css/teacher.css?v=3">
-<link rel="stylesheet" href="css/game.css?v=3">
-</head><body>
-<!-- NAVBAR -->
-<nav id="nav"><a href="#top" class="logo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor"/></svg>EDUQUEST</a>
-<div class="links"><a class="l" href="#top">Home</a><a class="l" href="#heroes">Meet the Heroes</a><a class="l" href="#how">How to Play</a><a class="l" href="#about">About</a><a class="l" href="#" id="swr">Switch Role</a><button class="gold" data-open="create">Create Adventure</button></div></nav>
+    <!DOCTYPE html>
+    <html lang="en"><head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>EduQuest — Different Paths, One Quest</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Lato:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/base.css?v=3">
+    <link rel="stylesheet" href="css/modals.css?v=3">
+    <link rel="stylesheet" href="css/home.css?v=3">
+    <link rel="stylesheet" href="css/room-lobby.css?v=3">
+    <link rel="stylesheet" href="css/character-select.css?v=3">
+    <link rel="stylesheet" href="css/teacher.css?v=3">
+    <link rel="stylesheet" href="css/game.css?v=3">
+    </head><body>
+    <!-- NAVBAR -->
+    <nav id="nav"><a href="#top" class="logo"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M15.5 8.5l-2 5-5 2 2-5z" fill="currentColor"/></svg>EDUQUEST</a>
+    <div class="links"><a class="l" href="#top">Home</a><a class="l" href="#heroes">Meet the Heroes</a><a class="l" href="#how">How to Play</a><a class="l" href="#about">About</a><a class="l" href="#" id="swr">Switch Role</a><button class="gold" data-open="create">Create Adventure</button></div></nav>
 
-<!-- ========== ROLE SELECTION ========== -->
-<div id="rolesel"><div class="rsw"><div class="cz" style="letter-spacing:.3em;font-size:13px">🧭 EDUQUEST</div><h1>CHOOSE YOUR PATH</h1><p>Different Paths, One Quest.</p>
-<div class="rsg">
-<div class="rsp dm" id="rs-dm" role="button" tabindex="0"><svg viewBox="0 0 64 64"><path d="M8 48L4 18l16 14 12-22 12 22 16-14-4 30z" fill="#e8be72" stroke="#392d29" stroke-width="2"/><rect x="8" y="50" width="48" height="6" fill="#b89a62"/></svg><h2>DUNGEON MASTER</h2><div class="rss">Guide the adventure. Shape the story. Inspire your students.</div><p class="rsd">Create adventure rooms, manage players, control story progression, configure learning challenges, and monitor student performance.</p><span class="rsc">ENTER AS DUNGEON MASTER</span></div>
-<div class="rsp pl" id="rs-pl" role="button" tabindex="0"><div class="rsth" id="rs-th"></div><h2>PLAYER</h2><div class="rss">Choose your destiny. Explore the world. Learn together.</div><p class="rsd">Join an adventure, select a character, collaborate with other players, and complete educational quests.</p><span class="rsc">ENTER AS PLAYER</span></div></div>
-<button class="rsx" id="rs-x">Just explore EduQuest</button></div></div>
+    <!-- ========== ROLE SELECTION ========== -->
+    <div id="rolesel"><div class="rsw"><div class="cz" style="letter-spacing:.3em;font-size:13px">🧭 EDUQUEST</div><h1>CHOOSE YOUR PATH</h1><p>Different Paths, One Quest.</p>
+    <div class="rsg">
+    <div class="rsp dm" id="rs-dm" role="button" tabindex="0"><svg viewBox="0 0 64 64"><path d="M8 48L4 18l16 14 12-22 12 22 16-14-4 30z" fill="#e8be72" stroke="#392d29" stroke-width="2"/><rect x="8" y="50" width="48" height="6" fill="#b89a62"/></svg><h2>DUNGEON MASTER</h2><div class="rss">Guide the adventure. Shape the story. Inspire your students.</div><p class="rsd">Create adventure rooms, manage players, control story progression, configure learning challenges, and monitor student performance.</p><span class="rsc">ENTER AS DUNGEON MASTER</span></div>
+    <div class="rsp pl" id="rs-pl" role="button" tabindex="0"><div class="rsth" id="rs-th"></div><h2>PLAYER</h2><div class="rss">Choose your destiny. Explore the world. Learn together.</div><p class="rsd">Join an adventure, select a character, collaborate with other players, and complete educational quests.</p><span class="rsc">ENTER AS PLAYER</span></div></div>
+    <button class="rsx" id="rs-x">Just explore EduQuest</button></div></div>
 
-<!-- ========== MAIN LOBBY ========== -->
-<div id="home"><header class="hero" id="top">
-<div class="hbg"></div><canvas class="fx"></canvas><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="wind" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.012" numOctaves="2" seed="3" result="n"><animate attributeName="baseFrequency" dur="16s" values="0.004 0.012;0.007 0.017;0.004 0.012" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
-<div class="c"><div class="cz" style="letter-spacing:.3em;font-size:13px">WELCOME, ADVENTURER</div>
-<h1>YOUR ADVENTURE<br>BEGINS HERE.</h1>
-<p>Enter a world where knowledge becomes power, every challenge tells a story, and every player has a role to play.</p>
-<div class="btns"><button class="gold" data-open="create">CREATE ROOM</button><button class="g" style="border-color:#faf7f0" data-open="join">JOIN ROOM</button></div>
-<small>No Account Required. Just Gather Your Party and Begin.</small></div></header>
+    <!-- ========== MAIN LOBBY ========== -->
+    <div id="home"><header class="hero" id="top">
+    <div class="hbg"></div><canvas class="fx"></canvas><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="wind" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.004 0.012" numOctaves="2" seed="3" result="n"><animate attributeName="baseFrequency" dur="16s" values="0.004 0.012;0.007 0.017;0.004 0.012" repeatCount="indefinite"/></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="12" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
+    <div class="c"><div class="cz" style="letter-spacing:.3em;font-size:13px">WELCOME, ADVENTURER</div>
+    <h1>YOUR ADVENTURE<br>BEGINS HERE.</h1>
+    <p>Enter a world where knowledge becomes power, every challenge tells a story, and every player has a role to play.</p>
+    <div class="btns"><button class="gold" data-open="create">CREATE ROOM</button><button class="g" style="border-color:#faf7f0" data-open="join">JOIN ROOM</button></div>
+    <small>No Account Required. Just Gather Your Party and Begin.</small></div></header>
 
-<section class="rv"><h2>CHOOSE YOUR GATEWAY</h2><div class="div">◆ ◆ ◆</div>
-<div class="two"><div class="card"><div style="font-size:30px">🏰</div><h3>CREATE A ROOM</h3><p>Create your own adventure and invite your friends.</p><button data-open="create">Create Adventure</button></div>
-<div class="card"><div style="font-size:30px">🌀</div><h3>JOIN A ROOM</h3><p>Join an existing adventure using an invitation code.</p><input id="qc" placeholder="Room Code (try QUEST1)"><button id="qj">Join Adventure</button> <button class="g" style="color:var(--brown)" data-open="join" data-tab="link">Join via Link</button></div></div></section>
+    <section class="rv"><h2>CHOOSE YOUR GATEWAY</h2><div class="div">◆ ◆ ◆</div>
+    <div class="two"><div class="card"><div style="font-size:30px">🏰</div><h3>CREATE A ROOM</h3><p>Create your own adventure and invite your friends.</p><button data-open="create">Create Adventure</button></div>
+    <div class="card"><div style="font-size:30px">🌀</div><h3>JOIN A ROOM</h3><p>Join an existing adventure using an invitation code.</p><input id="qc" placeholder="Room Code (try QUEST1)"><button id="qj">Join Adventure</button> <button class="g" style="color:var(--brown)" data-open="join" data-tab="link">Join via Link</button></div></div></section>
 
-<section id="heroes" class="rv"><h2>MEET THE HEROES</h2><p class="sub">Four paths. Four destinies. One adventure.</p><div class="div">◆ ◆ ◆</div><div class="heroes" id="hg"></div></section>
+    <section id="heroes" class="rv"><h2>MEET THE HEROES</h2><p class="sub">Four paths. Four destinies. One adventure.</p><div class="div">◆ ◆ ◆</div><div class="heroes" id="hg"></div></section>
 
-<section id="how" class="rv"><h2>HOW TO PLAY</h2><div class="div">◆ ◆ ◆</div><div class="steps">
-<div class="st"><b>01</b><h3>CREATE OR JOIN</h3><p>Create an adventure room or join your friend’s room.</p></div>
-<div class="st"><b>02</b><h3>BUILD YOUR PARTY</h3><p>Choose your character role and gather your teammates.</p></div>
-<div class="st"><b>03</b><h3>ENTER THE WORLD</h3><p>Explore fantasy environments and discover new adventures.</p></div>
-<div class="st"><b>04</b><h3>LEARN &amp; COMPLETE QUESTS</h3><p>Solve challenges, answer questions, and progress through the adventure.</p></div></div></section>
+    <section id="how" class="rv"><h2>HOW TO PLAY</h2><div class="div">◆ ◆ ◆</div><div class="steps">
+    <div class="st"><b>01</b><h3>CREATE OR JOIN</h3><p>Create an adventure room or join your friend’s room.</p></div>
+    <div class="st"><b>02</b><h3>BUILD YOUR PARTY</h3><p>Choose your character role and gather your teammates.</p></div>
+    <div class="st"><b>03</b><h3>ENTER THE WORLD</h3><p>Explore fantasy environments and discover new adventures.</p></div>
+    <div class="st"><b>04</b><h3>LEARN &amp; COMPLETE QUESTS</h3><p>Solve challenges, answer questions, and progress through the adventure.</p></div></div></section>
 
-<section class="about rv" id="about"><h2>WHERE LEARNING MEETS ADVENTURE.</h2><div class="div">◆ ◆ ◆</div>
-<p style="margin:auto">EduQuest transforms traditional learning into an immersive multiplayer adventure. Through interactive storytelling, role-based collaboration, and AI-powered challenges, students can explore knowledge while progressing through an exciting fantasy world.</p>
-<div class="feat"><div><h3>Interactive Storytelling</h3></div><div><h3>Multiplayer Collaboration</h3></div><div><h3>Adaptive AI Learning</h3></div></div></section>
-<footer>EduQuest — Different Paths, One Quest.</footer></div>
+    <section class="about rv" id="about"><h2>WHERE LEARNING MEETS ADVENTURE.</h2><div class="div">◆ ◆ ◆</div>
+    <p style="margin:auto">EduQuest transforms traditional learning into an immersive multiplayer adventure. Through interactive storytelling, role-based collaboration, and AI-powered challenges, students can explore knowledge while progressing through an exciting fantasy world.</p>
+    <div class="feat"><div><h3>Interactive Storytelling</h3></div><div><h3>Multiplayer Collaboration</h3></div><div><h3>Adaptive AI Learning</h3></div></div></section>
+    <footer>EduQuest — Different Paths, One Quest.</footer></div>
 
-<!-- ========== ROOM LOBBY ========== -->
-<main id='lobby'><div class='lbg'></div><canvas class='fx'></canvas>
-<div class='ltop'><b class='logo'>🧭 EDUQUEST</b><div><div class='rn cz' id='lrn'></div><small id='lrc'></small></div><span class='chip' id='lrp'></span><span style='flex:1'></span><button id='tpb' class='g' style='display:none'>🛡 Teacher</button><button id='pt' class='g'>👥 Party (<span id='pcn'></span>)</button><button id='iv' class='g'>Invite</button><button id='ccd' class='g'>Copy Code</button><button id='cli' class='g'>Copy Link</button><button id='sg' class='g'>Settings</button><button id='llv' class='g'>Leave</button></div>
-<div id='lsc'></div>
-<aside id='ldr'><div class='lh'><b class='cz' id='ldc'></b><button class='g' id='ldx'>×</button></div><input id='lq' placeholder='Search adventurers...'><div id='llist'></div></aside>
-<aside id='tcp'><div class='lh'><b class='cz'>TEACHER PANEL</b><button class='g' id='tcx'>×</button></div><div id='tcb'></div></aside>
-<div class='ldb'><div class='dtop'><div class='gm'>🧭</div><div><div class='cz' id='dsp'></div></div></div><p id='dtx'></p><div class='acts'><button id='bch' class='g'>Choose Role</button><button id='brd'>READY</button><button id='bst' class='gold'>START ADVENTURE</button></div></div></main>
-<div class='tt' id='tt'></div>
-<!-- ========== CHARACTER SELECTION ========== -->
-<div class='ov' id='selm'><canvas class='fx'></canvas><div class='md w'><button class='x' data-close>×</button><h2>CHOOSE YOUR DESTINY</h2><p class='sub'>Every adventurer has a unique path. Choose your role and prepare for the journey.</p><div id='so4' class='so4'></div><div id='sdet'></div><p><button id='sok'>CONFIRM SELECTION</button> <button class='g' style='color:var(--brown)' data-close>Cancel</button></p></div></div>
-<div class='ov' id='invm'><div class='md'><button class='x' data-close>×</button><h2>INVITE YOUR PARTY</h2><div class='div'>◆</div><label>Room Code</label><input id='ivc' readonly><p><button id='ivcb'>Copy Room Code</button></p><label>Invitation Link</label><input id='ivl' readonly><p><button id='ivlb'>Copy Invitation Link</button></p></div></div>
-<div class='ov' id='setm'><div class='md'><button class='x' data-close>×</button><h2>ROOM SETTINGS</h2><div class='div'>◆</div><label>Room Name</label><input id='srn'><label>Minimum Players to Start</label><select id='smn'><option>1</option><option>2</option><option>4</option><option>8</option><option>12</option></select><p><button id='ssv'>SAVE</button></p></div></div>
-<!-- ========== MODALS ========== -->
-<div class="ov" id="create"><div class="md w"><button class="x" data-close>×</button><h2>CREATE ADVENTURE ROOM</h2><div class="div">◆</div>
-<div class="cg"><div><label>Room Name</label><input id="rn" value="Guild of Curious Minds"></div><div><label>Dungeon Master Name</label><input id="pn" placeholder="e.g. Ms. Rina"></div>
-<div><label>Subject</label><select id="sb"><option>Mathematics</option><option>Science</option><option>History</option><option>Language</option></select></div>
-<div><label>Education Level</label><select id="lvl"><option>Elementary</option><option selected>Junior High</option><option>Senior High</option></select></div>
-<div><label>Maximum Players</label><select id="mp"><option>10</option><option selected>20</option><option>30</option><option>40</option></select></div>
-<div><label>Chapter</label><select id="ch"></select></div></div>
-<label>Story Mode</label><div class="modes"><div class="mode a" data-m="teacher"><b>Teacher-Guided</b>You control story progression. AI acts as an assistant.</div><div class="mode" data-m="ai"><b>AI-Assisted</b>AI helps with dialogue and explanations within your story rules. You stay in control.</div></div>
-<label>Learning Objectives</label><textarea id="obj">Students practise multiplication and teamwork through the Archive Gate riddles.</textarea>
-<div class="msg" id="cm"></div><p style="text-align:center"><button class="gold" id="cb" style="background:var(--brown);color:var(--parch)">CREATE ROOM</button></p></div></div>
+    <!-- ========== ROOM LOBBY ========== -->
+    <main id='lobby'><div class='lbg'></div><canvas class='fx'></canvas>
+    <div class='ltop'><b class='logo'>🧭 EDUQUEST</b><div><div class='rn cz' id='lrn'></div><small id='lrc'></small></div><span class='chip' id='lrp'></span><span style='flex:1'></span><button id='tpb' class='g' style='display:none'>🛡 Teacher</button><button id='pt' class='g'>👥 Party (<span id='pcn'></span>)</button><button id='iv' class='g'>Invite</button><button id='ccd' class='g'>Copy Code</button><button id='cli' class='g'>Copy Link</button><button id='sg' class='g'>Settings</button><button id='llv' class='g'>Leave</button></div>
+    <div id='lsc'></div>
+    <aside id='ldr'><div class='lh'><b class='cz' id='ldc'></b><button class='g' id='ldx'>×</button></div><input id='lq' placeholder='Search adventurers...'><div id='llist'></div></aside>
+    <aside id='tcp'><div class='lh'><b class='cz'>TEACHER PANEL</b><button class='g' id='tcx'>×</button></div><div id='tcb'></div></aside>
+    <div class='ldb'><div class='dtop'><div class='gm'>🧭</div><div><div class='cz' id='dsp'></div></div></div><p id='dtx'></p><div class='acts'><button id='bch' class='g'>Choose Role</button><button id='brd'>READY</button><button id='bst' class='gold'>START ADVENTURE</button></div></div></main>
+    <div class='tt' id='tt'></div>
+    <!-- ========== CHARACTER SELECTION ========== -->
+    <div class='ov' id='selm'><canvas class='fx'></canvas><div class='md w'><button class='x' data-close>×</button><h2>CHOOSE YOUR DESTINY</h2><p class='sub'>Every adventurer has a unique path. Choose your role and prepare for the journey.</p><div id='so4' class='so4'></div><div id='sdet'></div><p><button id='sok'>CONFIRM SELECTION</button> <button class='g' style='color:var(--brown)' data-close>Cancel</button></p></div></div>
+    <div class='ov' id='invm'><div class='md'><button class='x' data-close>×</button><h2>INVITE YOUR PARTY</h2><div class='div'>◆</div><label>Room Code</label><input id='ivc' readonly><p><button id='ivcb'>Copy Room Code</button></p><label>Invitation Link</label><input id='ivl' readonly><p><button id='ivlb'>Copy Invitation Link</button></p></div></div>
+    <div class='ov' id='setm'><div class='md'><button class='x' data-close>×</button><h2>ROOM SETTINGS</h2><div class='div'>◆</div><label>Room Name</label><input id='srn'><label>Minimum Players to Start</label><select id='smn'><option>1</option><option>2</option><option>4</option><option>8</option><option>12</option></select><p><button id='ssv'>SAVE</button></p></div></div>
+    <!-- ========== MODALS ========== -->
+    <div class="ov" id="create"><div class="md w"><button class="x" data-close>×</button><h2>CREATE ADVENTURE ROOM</h2><div class="div">◆</div>
+    <div class="cg"><div><label>Room Name</label><input id="rn" value="Guild of Curious Minds"></div><div><label>Dungeon Master Name</label><input id="pn" placeholder="e.g. Ms. Rina"></div>
+    <div><label>Subject</label><select id="sb"><option>Mathematics</option><option>Science</option><option>History</option><option>Language</option></select></div>
+    <div><label>Education Level</label><select id="lvl"><option>Elementary</option><option selected>Junior High</option><option>Senior High</option></select></div>
+    <div><label>Maximum Players</label><select id="mp"><option>10</option><option selected>20</option><option>30</option><option>40</option></select></div>
+    <div><label>Chapter</label><select id="ch"></select></div></div>
+    <label>Story Mode</label><div class="modes"><div class="mode a" data-m="teacher"><b>Teacher-Guided</b>You control story progression. AI acts as an assistant.</div><div class="mode" data-m="ai"><b>AI-Assisted</b>AI helps with dialogue and explanations within your story rules. You stay in control.</div></div>
+    <label>Learning Objectives</label><textarea id="obj">Students practise multiplication and teamwork through the Archive Gate riddles.</textarea>
+    <div class="msg" id="cm"></div><p style="text-align:center"><button class="gold" id="cb" style="background:var(--brown);color:var(--parch)">CREATE ROOM</button></p></div></div>
 
-<div class="ov" id="join"><div class="md"><button class="x" data-close>×</button><h2>JOIN ADVENTURE</h2><div class="div">◆</div>
-<div class="tabs"><button class="a" data-tab="code">With Code</button><button data-tab="link">With Link</button></div>
-<label>Player Nickname</label><input id="jn" placeholder="Your hero name">
-<div id="tc"><label>Invitation Code</label><input id="jc" placeholder="e.g. QUEST1"></div>
-<div id="tl" style="display:none"><label>Invitation Link</label><input id="jl" placeholder="https://eduquest.app/join/QUEST1"></div>
-<div class="msg" id="jm"></div><p><button id="jb">JOIN ADVENTURE</button></p><small>Demo codes: QUEST1 (open), FULL01 (full)</small></div></div>
+    <div class="ov" id="join"><div class="md"><button class="x" data-close>×</button><h2>JOIN ADVENTURE</h2><div class="div">◆</div>
+    <div class="tabs"><button class="a" data-tab="code">With Code</button><button data-tab="link">With Link</button></div>
+    <label>Player Nickname</label><input id="jn" placeholder="Your hero name">
+    <div id="tc"><label>Invitation Code</label><input id="jc" placeholder="e.g. QUEST1"></div>
+    <div id="tl" style="display:none"><label>Invitation Link</label><input id="jl" placeholder="https://eduquest.app/join/QUEST1"></div>
+    <div class="msg" id="jm"></div><p><button id="jb">JOIN ADVENTURE</button></p><small>Demo codes: QUEST1 (open), FULL01 (full)</small></div></div>
 
-<div class="ov" id="det"><div class="md w"><button class="x" data-close>×</button><div id="dc"></div></div></div>
-<div class="ov" id="dash"><div class="md w"><button class="x" data-close>×</button><div id="dashc"></div></div></div>
-<script src="js/config.js?v=3"></script>
-<script src="js/data/characters.js?v=3"></script>
-<script src="js/data/npcs.js?v=4"></script>
-<script src="js/utils.js?v=3"></script>
-<script src="js/state.js?v=3"></script>
-<script src="js/types.js?v=3"></script>
-<script src="js/mocks/mockStories.js?v=3"></script>
-<script src="js/mocks/mockAdventures.js?v=3"></script>
-<script src="js/mocks/mockTeacher.js?v=3"></script>
-<script src="js/mocks/mockRooms.js?v=3"></script>
-<script src="js/services/roomService.js?v=3"></script>
-<script src="js/services/AIProvider.js?v=3"></script>
-<script src="js/services/sceneManager.js?v=3"></script>
-<script src="js/services/backgroundManager.js?v=3"></script>
-<script src="js/services/learningEngine.js?v=3"></script>
-<script src="js/services/storyEngine.js?v=3"></script>
-<script src="js/services/audioManager.js?v=3"></script>
-<script src="js/services/adventureStore.js?v=3"></script>
-<script src="js/modals.js?v=3"></script>
-<script src="js/effects.js?v=3"></script>
-<script src="js/home.js?v=3"></script>
-<script src="js/room-lobby.js?v=3"></script>
-<script src="js/character-select.js?v=3"></script>
-<script src="js/teacher.js?v=3"></script>
-<script src="js/roles.js?v=3"></script>
-<script src="js/studio.js?v=3"></script>
-<script src="js/game.js?v=3"></script>
-</body></html>
+    <div class="ov" id="det"><div class="md w"><button class="x" data-close>×</button><div id="dc"></div></div></div>
+    <div class="ov" id="dash"><div class="md w"><button class="x" data-close>×</button><div id="dashc"></div></div></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/config.js?v=3"></script>
+    <script src="js/services/authService.js?v=1"></script>
+    <script src="js/data/characters.js?v=3"></script>
+    <script src="js/data/npcs.js?v=4"></script>
+    <script src="js/utils.js?v=3"></script>
+    <script src="js/state.js?v=3"></script>
+    <script src="js/types.js?v=3"></script>
+    <script src="js/mocks/mockStories.js?v=3"></script>
+    <script src="js/mocks/mockAdventures.js?v=3"></script>
+    <script src="js/mocks/mockTeacher.js?v=3"></script>
+    <script src="js/mocks/mockRooms.js?v=3"></script>
+    <script src="js/services/roomService.js?v=3"></script>
+    <script src="js/services/AIProvider.js?v=4"></script>
+    <script src="js/services/sceneManager.js?v=3"></script>
+    <script src="js/services/backgroundManager.js?v=3"></script>
+    <script src="js/services/learningEngine.js?v=3"></script>
+    <script src="js/services/storyEngine.js?v=3"></script>
+    <script src="js/services/audioManager.js?v=3"></script>
+    <script src="js/services/adventureStore.js?v=3"></script>
+    <script src="js/modals.js?v=3"></script>
+    <script src="js/effects.js?v=3"></script>
+    <script src="js/home.js?v=3"></script>
+    <script src="js/room-lobby.js?v=3"></script>
+    <script src="js/character-select.js?v=3"></script>
+    <script src="js/teacher.js?v=3"></script>
+    <script src="js/roles.js?v=3"></script>
+    <script src="js/studio.js?v=3"></script>
+    <script src="js/game.js?v=3"></script>
+    </body></html>
