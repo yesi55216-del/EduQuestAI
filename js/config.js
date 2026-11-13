@@ -4,7 +4,7 @@ window.EDUQUEST_CONFIG = {
     aiApiKey: '',
     aiApiUrl: '',
     model: '',
-    backendUrl: 'http://localhost:3000',
+    backendUrl: 'https://eduquestai-backend.vercel.app',
     multiplayerUrl: '',
     assetBaseUrl: '',
     useAPI: false,
